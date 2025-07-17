@@ -1,0 +1,76 @@
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: black;
+}
+
+.space-container {
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(ellipse at center, #000022, #000000);
+  /*degrader sombre pour faire l'espace un peut*/
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  transition: transform 3s ease, opacity 3s ease;
+}
+
+.zoom-out {
+  transform: scale(0.2) translateY(-200px);
+  /*scale = effet seloigne, translate = monte un peut*/
+  opacity: 0;
+}
+/*
+.zoom-in {
+	transform: scale(2) translateY(+200px);
+	opacity: 0;
+}*/
+
+.mon-texte {
+  color: white;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.mon-bouton {
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  background-color: royalblue;
+  color: white;
+  cursor: pointer;
+}
+
+.barre-gauche,
+.barre-droite {
+  position: absolute;
+  width: 50px;
+  height: 0;
+  background-color: white;
+  bottom: 0;
+  animation: monteeBarre 1s forwards;
+}
+
+.barre-gauche {
+  left: 0;
+}
+
+.barre-droite {
+  right: 0;
+}
+
+@keyframes monteeBarre {
+  from {
+    height: 0;
+  }
+  to {
+    height: 100vh;
+  }
+}
+
